@@ -1,0 +1,19 @@
+server:
+  port: 8989
+eureka:
+  client:
+    #    register-with-eureka: true
+    #    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    hostname: localhost
+
+microservice:
+  food-payment-service:
+    endpoints:
+      endpoint:
+        uri: http://FOOD-PAYMENT-SERVICE/payment/doPayment
+  food-order-service:
+    endpoints:
+      endpoint: http://FOOD-ORDER-SERVICE/orders/bookOrder
